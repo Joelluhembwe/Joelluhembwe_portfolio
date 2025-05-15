@@ -21,6 +21,7 @@ export default async function HomePage() {
   const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
   const xLink = "https://x.com/joel_luhembwe"; 
   // Ensure 'profile.jpg' is in the 'public' folder at the root of your project.
+  // For example, the path should be: your-project-folder/public/profile.jpg
   const avatarUrl = "/profile.jpg"; 
   const email = "joel.watshala@example.com";
   const resumeUrl = "/placeholder-resume.pdf"; 
@@ -72,9 +73,9 @@ export default async function HomePage() {
 
   const certifications: Certificate[] = [
     { name: "Work Smart with Excel", issuer: "Microsoft" },
-    { name: "Python for Everybody Specialization", issuer: "University of Michigan (Coursera)" }, // Example, please update
-    { name: "SQL for Data Science", issuer: "University of California, Davis (Coursera)" }, // Example, please update
-    { name: "Data Analytics Bootcamp", issuer: "Your Bootcamp Provider" } // Example, please update
+    { name: "100 Days of Coding: The Complete Python Pro Bootcamp", issuer: "Udemy" },
+    { name: "The Complete SQL Bootcamp: Go from Zero to Hero", issuer: "Udemy" },
+    { name: "Complete Data Analyst Bootcamp: From Basics To Advanced", issuer: "Udemy" } // Assuming Udemy, please update if different
   ];
 
 
