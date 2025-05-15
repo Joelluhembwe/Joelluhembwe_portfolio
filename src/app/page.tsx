@@ -8,7 +8,7 @@ import ProjectsShowcase, { type Project } from '@/components/landing/projects-sh
 import SocialLinks from '@/components/landing/social-links';
 import ContactMe from '@/components/landing/contact-me';
 import ResumeSection from '@/components/landing/resume-section'; 
-import CertificationsSection, { type Certificate } from '@/components/landing/certifications-section'; // Import new component
+import CertificationsSection, { type Certificate } from '@/components/landing/certifications-section';
 import { Separator } from '@/components/ui/separator';
 
 export default async function HomePage() {
@@ -72,10 +72,30 @@ export default async function HomePage() {
   ];
 
   const certifications: Certificate[] = [
-    { name: "Work Smart with Excel", issuer: "Microsoft" },
-    { name: "100 Days of Coding: The Complete Python Pro Bootcamp", issuer: "Udemy" },
-    { name: "The Complete SQL Bootcamp: Go from Zero to Hero", issuer: "Udemy" },
-    { name: "Complete Data Analyst Bootcamp: From Basics To Advanced", issuer: "Udemy" } // Assuming Udemy, please update if different
+    { 
+      name: "Work Smart with Excel", 
+      issuer: "Microsoft", 
+      imageUrl: "https://placehold.co/400x300.png", 
+      imageHint: "excel certificate" 
+    },
+    { 
+      name: "100 Days of Coding: The Complete Python Pro Bootcamp", 
+      issuer: "Udemy", 
+      imageUrl: "https://placehold.co/400x300.png", 
+      imageHint: "python certificate" 
+    },
+    { 
+      name: "The Complete SQL Bootcamp: Go from Zero to Hero", 
+      issuer: "Udemy", 
+      imageUrl: "https://placehold.co/400x300.png", 
+      imageHint: "sql certificate" 
+    },
+    { 
+      name: "Complete Data Analyst Bootcamp: From Basics To Advanced", 
+      issuer: "Udemy", 
+      imageUrl: "https://placehold.co/400x300.png", 
+      imageHint: "data analyst certificate" 
+    }
   ];
 
 
@@ -92,7 +112,7 @@ export default async function HomePage() {
         <Separator className="my-8 md:my-12" />
         <EducationHighlight degree={degree} field={field} />
         <Separator className="my-8 md:my-12" />
-        <CertificationsSection certificates={certifications} /> {/* Add new section here */}
+        <CertificationsSection certificates={certifications} />
         <Separator className="my-8 md:my-12" />
         <ResumeSection resumeUrl={resumeUrl} /> 
         <Separator className="my-8 md:my-12" />
