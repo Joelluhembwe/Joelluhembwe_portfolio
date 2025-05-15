@@ -7,7 +7,7 @@ import EducationHighlight from '@/components/landing/education-highlight';
 import ProjectsShowcase, { type Project } from '@/components/landing/projects-showcase';
 import SocialLinks from '@/components/landing/social-links';
 import ContactMe from '@/components/landing/contact-me';
-import ResumeSection from '@/components/landing/resume-section'; // Import the new ResumeSection
+import ResumeSection from '@/components/landing/resume-section'; 
 import { Separator } from '@/components/ui/separator';
 
 export default async function HomePage() {
@@ -19,9 +19,10 @@ export default async function HomePage() {
   const githubLink = "https://github.com/Joelluhembwe";
   const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
   const xLink = "https://x.com/joel_luhembwe"; 
-  const avatarUrl = "/profile.jpg"; // Updated to use the local profile picture
+  // Ensure 'profile.jpg' is in the 'public' folder at the root of your project.
+  const avatarUrl = "/profile.jpg"; 
   const email = "joel.watshala@example.com";
-  const resumeUrl = "/placeholder-resume.pdf"; // Placeholder for resume URL
+  const resumeUrl = "/placeholder-resume.pdf"; 
 
   const bioInput: GenerateProfessionalBioInput = {
     name,
@@ -81,7 +82,6 @@ export default async function HomePage() {
         <Separator className="my-8 md:my-12" />
         <EducationHighlight degree={degree} field={field} />
         <Separator className="my-8 md:my-12" />
-        {/* Add the ResumeSection here */}
         <ResumeSection resumeUrl={resumeUrl} /> 
         <Separator className="my-8 md:my-12" />
         <SocialLinks githubUrl={githubLink} linkedinUrl={linkedinLink} xUrl={xLink} />
