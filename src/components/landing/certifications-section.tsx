@@ -33,7 +33,7 @@ const CertificationsSection: FC<CertificationsSectionProps> = ({ certificates })
             {certificates.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {certificates.map((cert, index) => (
-                  <Card key={index} className="flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+                  <Card key={index} className="flex flex-col shadow-sm hover:shadow-md transition-all duration-300 ease-in-out hover:scale-105 overflow-hidden">
                     {cert.imageUrl && (
                       <div className="relative w-full aspect-[16/9] bg-muted">
                         <Image

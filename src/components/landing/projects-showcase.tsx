@@ -33,7 +33,7 @@ const ProjectsShowcase: FC<ProjectsShowcaseProps> = ({ projects }) => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card key={project.name} className="flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card key={project.name} className="flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105">
                 <CardHeader>
                   <div className="relative w-full aspect-[16/9] rounded-t-md overflow-hidden mb-4">
                     <Image

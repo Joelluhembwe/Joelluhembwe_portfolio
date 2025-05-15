@@ -25,7 +25,7 @@ const SkillsShowcase: FC = () => {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
           {skillsList.map((skill) => (
-            <Card key={skill.name} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card key={skill.name} className="text-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105">
               <CardHeader className="pb-2">
                 <skill.icon className="w-12 h-12 text-accent mx-auto mb-3" />
               </CardHeader>
