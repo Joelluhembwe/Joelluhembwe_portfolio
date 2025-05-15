@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth"> {/* Added scroll-smooth for better anchor link navigation */}
+    <html lang="en" className="scroll-smooth"> {/* Ensure scroll-smooth is here */}
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header /> {/* Add the Header component here */}
         {children}

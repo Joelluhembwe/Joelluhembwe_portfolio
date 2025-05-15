@@ -13,11 +13,12 @@ interface NavItem {
   label: string;
 }
 
+// Ensure these hrefs match the IDs of your sections in page.tsx
 const navItems: NavItem[] = [
   { href: '#about-me', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#social-links', label: 'Connect' },
-  { href: '#contact-me', label: 'Contact' }, // Updated to point to new contact section
+  { href: '#contact-me', label: 'Contact' },
 ];
 
 const Header: FC = () => {

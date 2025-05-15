@@ -6,7 +6,7 @@ import SkillsShowcase from '@/components/landing/skills-showcase';
 import EducationHighlight from '@/components/landing/education-highlight';
 import ProjectsShowcase, { type Project } from '@/components/landing/projects-showcase';
 import SocialLinks from '@/components/landing/social-links';
-import ContactMe from '@/components/landing/contact-me'; // Import the new component
+import ContactMe from '@/components/landing/contact-me';
 import { Separator } from '@/components/ui/separator';
 
 export default async function HomePage() {
@@ -19,7 +19,7 @@ export default async function HomePage() {
   const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
   const xLink = "https://x.com/joel_luhembwe"; 
   const avatarUrl = "https://placehold.co/128x128.png"; 
-  const email = "joel.watshala@example.com"; // Example email
+  const email = "joel.watshala@example.com";
 
   const bioInput: GenerateProfessionalBioInput = {
     name,
@@ -69,20 +69,27 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* The Introduction component is now the first piece of content after the global Header */}
+      {/* It has id="introduction" defined within its own component file */}
       <Introduction name={name} title={title} avatarUrl={avatarUrl} />
 
       <main className="flex-grow">
+        {/* AboutMe component defines id="about-me" internally */}
         <AboutMe bio={professionalBio} />
         <Separator className="my-8 md:my-12" />
+        {/* ProjectsShowcase component defines id="projects" internally */}
         <ProjectsShowcase projects={projects} />
         <Separator className="my-8 md:my-12" />
+        {/* SkillsShowcase component defines id="skills" internally (though not linked in header currently) */}
         <SkillsShowcase />
         <Separator className="my-8 md:my-12" />
+        {/* EducationHighlight component defines id="education" internally (though not linked in header currently) */}
         <EducationHighlight degree={degree} field={field} />
         <Separator className="my-8 md:my-12" />
+        {/* SocialLinks component defines id="social-links" internally */}
         <SocialLinks githubUrl={githubLink} linkedinUrl={linkedinLink} xUrl={xLink} />
-        <Separator className="my-8 md:my-12" /> {/* Separator before ContactMe */}
-        <ContactMe email={email} /> {/* Add the ContactMe section */}
+        <Separator className="my-8 md:my-12" />
+        {/* ContactMe component defines id="contact-me" internally */}
+        <ContactMe email={email} />
       </main>
 
       <footer className="py-8 text-center text-muted-foreground">
