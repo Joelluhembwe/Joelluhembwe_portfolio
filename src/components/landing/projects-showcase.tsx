@@ -39,8 +39,8 @@ const ProjectsShowcase: FC<ProjectsShowcaseProps> = ({ projects }) => {
                     <Image
                       src={project.imageUrl}
                       alt={project.name}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{ objectFit: 'cover' }}
                       data-ai-hint={project.imageHint || "project abstract"}
                     />
                   </div>

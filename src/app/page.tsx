@@ -15,8 +15,8 @@ export default async function HomePage() {
   const field = "Computer Science";
   const skills = ["Excel", "SQL", "Power BI", "Tableau", "Python"];
   const githubLink = "https://github.com/Joelluhembwe";
-  const linkedinLink = undefined; // Actual URL can be "https://linkedin.com/in/yourprofile"
-  const xLink = undefined; // Actual URL can be "https://x.com/yourprofile"
+  const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; // Actual URL 
+  const xLink = "https://x.com/joel_luhembwe"; // Actual URL
   const avatarUrl = "https://placehold.co/128x128.png"; // Placeholder for profile picture
 
   const bioInput: GenerateProfessionalBioInput = {
@@ -50,7 +50,7 @@ export default async function HomePage() {
       name: "Sales Dashboard Pro",
       description: "Created an interactive sales dashboard with Power BI, providing real-time insights for decision-makers.",
       imageUrl: "https://placehold.co/600x400.png",
-      projectUrl: "#", // No public link available
+      projectUrl: "https://github.com/Joelluhembwe/Sales-Dashboard-Pro", 
       technologies: ["Power BI", "DAX", "Data Modeling"],
       imageHint: "dashboard interface"
     },
@@ -58,6 +58,7 @@ export default async function HomePage() {
       name: "Customer Segmentation Analysis",
       description: "Performed customer segmentation using Tableau and R to identify key customer groups and tailor marketing strategies.",
       imageUrl: "https://placehold.co/600x400.png",
+      projectUrl: "https://github.com/Joelluhembwe/Customer-Segmentation",
       technologies: ["Tableau", "R", "Statistics", "Excel"],
       imageHint: "customer analytics"
     }
