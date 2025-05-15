@@ -4,7 +4,7 @@
 import type { FC } from 'react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Navigation } from 'lucide-react'; // Added Navigation for a placeholder logo
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
   { href: '#about-me', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#social-links', label: 'Connect' },
-  { href: '#social-links', label: 'Contact' }, // Points to social links for now
+  { href: '#contact-me', label: 'Contact' }, // Updated to point to new contact section
 ];
 
 const Header: FC = () => {
@@ -33,18 +33,16 @@ const Header: FC = () => {
   };
 
   if (!isMounted) {
-    // Return a basic structure or null to avoid flash of unstyled content / layout shift during SSR
-    // For a sticky header, it's often better to render its structure to prevent content jump.
-    // However, for Sheet functionality, client-side logic is key.
-    // We can render the static part of the header.
+    // Render a basic structure to avoid layout shifts and hydration issues
     return (
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link href="/" className="text-xl font-bold text-primary">
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold text-primary">
+            <Navigation className="h-6 w-6 text-accent" /> {/* Placeholder Icon */}
             MyPortfolio
           </Link>
           <div className="hidden md:flex space-x-6">
-             {/* Placeholder for desktop nav items if needed before mount */}
+            {/* Links will be rendered once mounted */}
           </div>
           <div className="md:hidden">
             <Button variant="ghost" size="icon" aria-label="Open menu" disabled>
@@ -59,7 +57,8 @@ const Header: FC = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="text-xl font-bold text-primary">
+        <Link href="/" className="flex items-center gap-2 text-xl font-bold text-primary" onClick={handleLinkClick}>
+          <Navigation className="h-6 w-6 text-accent" /> {/* Placeholder Icon */}
           MyPortfolio
         </Link>
 
@@ -86,7 +85,8 @@ const Header: FC = () => {
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] p-0 flex flex-col bg-background">
                 <div className="flex items-center justify-between p-4 border-b">
-                   <Link href="/" className="text-lg font-bold text-primary" onClick={handleLinkClick}>
+                   <Link href="/" className="flex items-center gap-2 text-lg font-bold text-primary" onClick={handleLinkClick}>
+                      <Navigation className="h-5 w-5 text-accent" />
                       MyPortfolio
                     </Link>
                   <SheetClose asChild>

@@ -6,6 +6,7 @@ import SkillsShowcase from '@/components/landing/skills-showcase';
 import EducationHighlight from '@/components/landing/education-highlight';
 import ProjectsShowcase, { type Project } from '@/components/landing/projects-showcase';
 import SocialLinks from '@/components/landing/social-links';
+import ContactMe from '@/components/landing/contact-me'; // Import the new component
 import { Separator } from '@/components/ui/separator';
 
 export default async function HomePage() {
@@ -18,6 +19,7 @@ export default async function HomePage() {
   const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
   const xLink = "https://x.com/joel_luhembwe"; 
   const avatarUrl = "https://placehold.co/128x128.png"; 
+  const email = "joel.watshala@example.com"; // Example email
 
   const bioInput: GenerateProfessionalBioInput = {
     name,
@@ -79,6 +81,8 @@ export default async function HomePage() {
         <EducationHighlight degree={degree} field={field} />
         <Separator className="my-8 md:my-12" />
         <SocialLinks githubUrl={githubLink} linkedinUrl={linkedinLink} xUrl={xLink} />
+        <Separator className="my-8 md:my-12" /> {/* Separator before ContactMe */}
+        <ContactMe email={email} /> {/* Add the ContactMe section */}
       </main>
 
       <footer className="py-8 text-center text-muted-foreground">
