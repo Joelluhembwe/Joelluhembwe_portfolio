@@ -1,7 +1,9 @@
+
 import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import Header from '@/components/layout/header'; // Import the new header
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,8 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth"> {/* Added scroll-smooth for better anchor link navigation */}
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Header /> {/* Add the Header component here */}
         {children}
         <Toaster />
       </body>

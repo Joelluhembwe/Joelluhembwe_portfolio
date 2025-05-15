@@ -15,9 +15,9 @@ export default async function HomePage() {
   const field = "Computer Science";
   const skills = ["Excel", "SQL", "Power BI", "Tableau", "Python"];
   const githubLink = "https://github.com/Joelluhembwe";
-  const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; // Actual URL 
-  const xLink = "https://x.com/joel_luhembwe"; // Actual URL
-  const avatarUrl = "https://placehold.co/128x128.png"; // Placeholder for profile picture
+  const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
+  const xLink = "https://x.com/joel_luhembwe"; 
+  const avatarUrl = "https://placehold.co/128x128.png"; 
 
   const bioInput: GenerateProfessionalBioInput = {
     name,
@@ -66,9 +66,8 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header>
-        <Introduction name={name} title={title} avatarUrl={avatarUrl} />
-      </header>
+      {/* The Introduction component is now the first piece of content after the global Header */}
+      <Introduction name={name} title={title} avatarUrl={avatarUrl} />
 
       <main className="flex-grow">
         <AboutMe bio={professionalBio} />
