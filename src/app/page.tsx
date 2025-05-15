@@ -8,6 +8,7 @@ import ProjectsShowcase, { type Project } from '@/components/landing/projects-sh
 import SocialLinks from '@/components/landing/social-links';
 import ContactMe from '@/components/landing/contact-me';
 import ResumeSection from '@/components/landing/resume-section'; 
+import CertificationsSection, { type Certificate } from '@/components/landing/certifications-section'; // Import new component
 import { Separator } from '@/components/ui/separator';
 
 export default async function HomePage() {
@@ -69,6 +70,14 @@ export default async function HomePage() {
     }
   ];
 
+  const certifications: Certificate[] = [
+    { name: "Work Smart with Excel", issuer: "Microsoft" },
+    { name: "Python for Everybody Specialization", issuer: "University of Michigan (Coursera)" }, // Example, please update
+    { name: "SQL for Data Science", issuer: "University of California, Davis (Coursera)" }, // Example, please update
+    { name: "Data Analytics Bootcamp", issuer: "Your Bootcamp Provider" } // Example, please update
+  ];
+
+
   return (
     <div className="min-h-screen flex flex-col">
       <Introduction name={name} title={title} avatarUrl={avatarUrl} />
@@ -81,6 +90,8 @@ export default async function HomePage() {
         <SkillsShowcase />
         <Separator className="my-8 md:my-12" />
         <EducationHighlight degree={degree} field={field} />
+        <Separator className="my-8 md:my-12" />
+        <CertificationsSection certificates={certifications} /> {/* Add new section here */}
         <Separator className="my-8 md:my-12" />
         <ResumeSection resumeUrl={resumeUrl} /> 
         <Separator className="my-8 md:my-12" />

@@ -4,7 +4,7 @@
 import type { FC } from 'react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Navigation, FileText } from 'lucide-react'; // Added FileText
+import { Menu, X, Navigation, Award } from 'lucide-react'; // Added Award
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
@@ -17,7 +17,10 @@ interface NavItem {
 const navItems: NavItem[] = [
   { href: '#about-me', label: 'About' },
   { href: '#projects', label: 'Projects' },
-  { href: '#resume', label: 'Resume' }, // Added Resume link
+  { href: '#skills', label: 'Skills'},
+  { href: '#education', label: 'Education'},
+  { href: '#certifications', label: 'Certifications' }, // Added Certifications link
+  { href: '#resume', label: 'Resume' },
   { href: '#social-links', label: 'Connect' },
   { href: '#contact-me', label: 'Contact' },
 ];
@@ -65,7 +68,7 @@ const Header: FC = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex space-x-4 lg:space-x-6">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -97,7 +100,7 @@ const Header: FC = () => {
                     </Button>
                   </SheetClose>
                 </div>
-                <nav className="flex-grow p-4 space-y-4">
+                <nav className="flex-grow p-4 space-y-4 overflow-y-auto">
                   {navItems.map((item) => (
                     <SheetClose asChild key={item.label}>
                       <Link
