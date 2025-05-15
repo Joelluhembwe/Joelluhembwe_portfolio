@@ -20,8 +20,9 @@ export default async function HomePage() {
   const githubLink = "https://github.com/Joelluhembwe";
   const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
   const xLink = "https://x.com/joel_luhembwe"; 
-  // Ensure 'profile.jpg' is in the 'public' folder at the root of your project.
-  // For example, the path should be: your-project-folder/public/profile.jpg
+  // IMPORTANT: Save your profile picture as 'profile.jpg'
+  // in the 'public' folder at the root of your project.
+  // The final path for the image file must be: your-project-folder/public/profile.jpg
   const avatarUrl = "/profile.jpg"; 
   const email = "joel.watshala@example.com";
   const resumeUrl = "/placeholder-resume.pdf"; 
