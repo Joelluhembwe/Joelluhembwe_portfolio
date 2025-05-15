@@ -5,9 +5,10 @@ import { GraduationCap } from 'lucide-react';
 interface EducationHighlightProps {
   degree: string;
   field: string;
+  university: string;
 }
 
-const EducationHighlight: FC<EducationHighlightProps> = ({ degree, field }) => {
+const EducationHighlight: FC<EducationHighlightProps> = ({ degree, field, university }) => {
   return (
     <section id="education" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -20,7 +21,8 @@ const EducationHighlight: FC<EducationHighlightProps> = ({ degree, field }) => {
           </CardHeader>
           <CardContent>
             <h3 className="text-xl md:text-2xl font-semibold text-foreground">{degree}</h3>
-            <p className="text-lg md:text-xl text-foreground/80">{field}</p>
+            <p className="text-lg md:text-xl text-foreground/80 mb-1">{field}</p>
+            <p className="text-md md:text-lg text-muted-foreground">{university}</p>
           </CardContent>
         </Card>
       </div>

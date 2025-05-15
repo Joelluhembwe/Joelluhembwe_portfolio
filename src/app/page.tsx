@@ -16,6 +16,7 @@ export default async function HomePage() {
   const title = "Data Analyst";
   const degree = "Bachelor's Degree";
   const field = "Computer Science";
+  const university = "Cavendish University Zambia"; // Added university
   const skills = ["Excel", "SQL", "Power BI", "Tableau", "Python"];
   const githubLink = "https://github.com/Joelluhembwe";
   const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
@@ -111,7 +112,7 @@ export default async function HomePage() {
         <Separator className="my-8 md:my-12" />
         <SkillsShowcase />
         <Separator className="my-8 md:my-12" />
-        <EducationHighlight degree={degree} field={field} />
+        <EducationHighlight degree={degree} field={field} university={university} />
         <Separator className="my-8 md:my-12" />
         <CertificationsSection certificates={certifications} />
         <Separator className="my-8 md:my-12" />
