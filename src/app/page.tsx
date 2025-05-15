@@ -19,7 +19,7 @@ export default async function HomePage() {
   const githubLink = "https://github.com/Joelluhembwe";
   const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
   const xLink = "https://x.com/joel_luhembwe"; 
-  const avatarUrl = "https://placehold.co/128x128.png"; 
+  const avatarUrl = "/profile.jpg"; // Updated to use the local profile picture
   const email = "joel.watshala@example.com";
   const resumeUrl = "/placeholder-resume.pdf"; // Placeholder for resume URL
 
