@@ -4,7 +4,7 @@
 import type { FC } from 'react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Navigation } from 'lucide-react'; // Added Navigation for a placeholder logo
+import { Menu, X, Navigation, FileText } from 'lucide-react'; // Added FileText
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
@@ -13,10 +13,11 @@ interface NavItem {
   label: string;
 }
 
-// Ensure these hrefs match the IDs of your sections in page.tsx
+// Ensure these hrefs match the IDs of your sections
 const navItems: NavItem[] = [
   { href: '#about-me', label: 'About' },
   { href: '#projects', label: 'Projects' },
+  { href: '#resume', label: 'Resume' }, // Added Resume link
   { href: '#social-links', label: 'Connect' },
   { href: '#contact-me', label: 'Contact' },
 ];

@@ -7,6 +7,7 @@ import EducationHighlight from '@/components/landing/education-highlight';
 import ProjectsShowcase, { type Project } from '@/components/landing/projects-showcase';
 import SocialLinks from '@/components/landing/social-links';
 import ContactMe from '@/components/landing/contact-me';
+import ResumeSection from '@/components/landing/resume-section'; // Import the new ResumeSection
 import { Separator } from '@/components/ui/separator';
 
 export default async function HomePage() {
@@ -20,6 +21,7 @@ export default async function HomePage() {
   const xLink = "https://x.com/joel_luhembwe"; 
   const avatarUrl = "https://placehold.co/128x128.png"; 
   const email = "joel.watshala@example.com";
+  const resumeUrl = "/placeholder-resume.pdf"; // Placeholder for resume URL
 
   const bioInput: GenerateProfessionalBioInput = {
     name,
@@ -68,27 +70,22 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* The Introduction component is now the first piece of content after the global Header */}
-      {/* It has id="introduction" defined within its own component file */}
       <Introduction name={name} title={title} avatarUrl={avatarUrl} />
 
       <main className="flex-grow">
-        {/* AboutMe component defines id="about-me" internally */}
         <AboutMe bio={professionalBio} />
         <Separator className="my-8 md:my-12" />
-        {/* ProjectsShowcase component defines id="projects" internally */}
         <ProjectsShowcase projects={projects} />
         <Separator className="my-8 md:my-12" />
-        {/* SkillsShowcase component defines id="skills" internally (though not linked in header currently) */}
         <SkillsShowcase />
         <Separator className="my-8 md:my-12" />
-        {/* EducationHighlight component defines id="education" internally (though not linked in header currently) */}
         <EducationHighlight degree={degree} field={field} />
         <Separator className="my-8 md:my-12" />
-        {/* SocialLinks component defines id="social-links" internally */}
+        {/* Add the ResumeSection here */}
+        <ResumeSection resumeUrl={resumeUrl} /> 
+        <Separator className="my-8 md:my-12" />
         <SocialLinks githubUrl={githubLink} linkedinUrl={linkedinLink} xUrl={xLink} />
         <Separator className="my-8 md:my-12" />
-        {/* ContactMe component defines id="contact-me" internally */}
         <ContactMe email={email} />
       </main>
 
