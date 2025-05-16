@@ -1,3 +1,4 @@
+
 // This file is machine-generated - edit at your own risk.
 
 'use server';
@@ -17,9 +18,9 @@ const GenerateProfessionalBioInputSchema = z.object({
   name: z.string().describe('The full name of the person.'),
   degree: z.string().describe('The degree of the person, including institution if relevant.'), // Updated description
   skills: z.array(z.string()).describe('The skills of the person.'),
-  githubLink: z.string().describe('The link to the person\'s GitHub profile.'),
-  linkedinLink: z.string().optional().describe('The link to the person\'s LinkedIn profile.'),
-  xLink: z.string().optional().describe('The link to the person\'s X profile.'),
+  githubLink: z.string().optional().describe('The link to the person\'s GitHub profile.'), // Kept in schema if used elsewhere, but removed from prompt
+  linkedinLink: z.string().optional().describe('The link to the person\'s LinkedIn profile.'), // Kept in schema
+  xLink: z.string().optional().describe('The link to the person\'s X profile.'), // Kept in schema
 });
 export type GenerateProfessionalBioInput = z.infer<
   typeof GenerateProfessionalBioInputSchema
@@ -46,13 +47,11 @@ const prompt = ai.definePrompt({
 
   Given the following information, write a concise and engaging professional bio for the person.
   The bio should be approximately 2-4 sentences long.
+  Focus on the person's professional background, skills, and education. Do not include social media links in the bio text.
 
   Name: {{{name}}}
   Degree and University: {{{degree}}}
   Skills: {{#each skills}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
-  GitHub: {{{githubLink}}}
-  {{#if linkedinLink}}LinkedIn: {{{linkedinLink}}}{{/if}}
-  {{#if xLink}}X: {{{xLink}}}{{/if}}
   `,
 });
 
@@ -71,3 +70,4 @@ const generateProfessionalBioFlow = ai.defineFlow(
     return output;
   }
 );
+
