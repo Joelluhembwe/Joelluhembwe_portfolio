@@ -15,8 +15,8 @@ interface SocialLinksProps {
   githubUrl?: string;
   linkedinUrl?: string;
   xUrl?: string;
-  email?: string; // Added email prop
-  phoneNumber?: string; // Added phoneNumber prop
+  email?: string;
+  phoneNumber?: string;
 }
 
 const SocialLinks: FC<SocialLinksProps> = ({ githubUrl, linkedinUrl, xUrl, email, phoneNumber }) => {
@@ -35,6 +35,13 @@ const SocialLinks: FC<SocialLinksProps> = ({ githubUrl, linkedinUrl, xUrl, email
   if (socialLinksList.length === 0 && !email && !phoneNumber) {
     return null; 
   }
+
+  const getWhatsAppUrl = (number?: string) => {
+    if (!number) return '#';
+    // Remove '+', spaces, and leading zeros if any, for the WhatsApp URL
+    const cleanedNumber = number.replace(/\+/g, '').replace(/\s/g, '');
+    return `https://wa.me/${cleanedNumber}`;
+  };
 
   return (
     <section id="social-links" className="py-12 md:py-16 bg-secondary/50">
@@ -77,13 +84,15 @@ const SocialLinks: FC<SocialLinksProps> = ({ githubUrl, linkedinUrl, xUrl, email
           )}
           {phoneNumber && (
             <div className="flex items-center justify-center text-foreground/90 mt-2">
-              <Phone className="w-5 h-5 mr-3 text-accent" />
+              <Phone className="w-5 h-5 mr-3 text-accent" /> {/* Consider changing to WhatsApp icon if desired */}
               <a 
-                href={`tel:${phoneNumber}`} 
+                href={getWhatsAppUrl(phoneNumber)} 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:underline hover:text-accent transition-colors text-lg"
-                aria-label={`Call ${phoneNumber}`}
+                aria-label={`Chat on WhatsApp: ${phoneNumber}`}
               >
-                {phoneNumber}
+                {phoneNumber} (WhatsApp)
               </a>
             </div>
           )}
