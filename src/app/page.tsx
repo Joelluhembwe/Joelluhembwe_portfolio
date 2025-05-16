@@ -92,6 +92,22 @@ export default async function HomePage() {
       projectUrl: "https://github.com/Joelluhembwe/Customer-Segmentation",
       technologies: ["Tableau", "R", "Statistics", "Excel"],
       imageHint: "customer analytics"
+    },
+    {
+      name: "Predictive Maintenance System",
+      description: "Built a predictive maintenance system for industrial equipment, reducing downtime by 20% using Python and time-series analysis.",
+      imageUrl: "https://placehold.co/600x400.png",
+      projectUrl: "https://github.com/Joelluhembwe/predictive-maintenance",
+      technologies: ["Python", "Scikit-learn", "Pandas", "Time Series"],
+      imageHint: "industrial iot"
+    },
+    {
+      name: "E-commerce Recommendation Engine",
+      description: "Designed and implemented a recommendation engine for an e-commerce platform, increasing user engagement and sales.",
+      imageUrl: "https://placehold.co/600x400.png",
+      projectUrl: "https://github.com/Joelluhembwe/ecommerce-recommender",
+      technologies: ["Python", "Surprise", "Collaborative Filtering", "API"],
+      imageHint: "online shopping"
     }
   ];
 
