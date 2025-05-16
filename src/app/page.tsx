@@ -6,7 +6,7 @@ import EducationHighlight from '@/components/landing/education-highlight';
 import ProjectsShowcase, { type Project } from '@/components/landing/projects-showcase';
 import SocialLinks from '@/components/landing/social-links';
 import ContactMe from '@/components/landing/contact-me';
-import ResumeSection from '@/components/landing/resume-section'; 
+import ResumeSection from '@/components/landing/resume-section';
 import CertificationsSection, { type Certificate } from '@/components/landing/certifications-section';
 import { Separator } from '@/components/ui/separator';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'; // Added Avatar imports
@@ -19,15 +19,15 @@ export default async function HomePage() {
   const university = "Cavendish University Zambia";
   const skills = ["Excel", "SQL", "Power BI", "Tableau", "Python"];
   const githubLink = "https://github.com/Joelluhembwe";
-  const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
-  const xLink = "https://x.com/joel_luhembwe"; 
+  const linkedinLink = "https://linkedin.com/in/joel-luhembwe";
+  const xLink = "https://x.com/joel_luhembwe";
   // IMPORTANT: Save your profile picture as 'profile.jpg'
   // in the 'public' folder at the root of your project.
   // The final path for the image file must be: your-project-folder/public/profile.jpg
-  const avatarUrl = "/profile.jpg"; 
+  const avatarUrl = "/profile.jpg";
   const email = "joelluhembwe16@gmail.com";
   const phoneNumber = "+260975202152"; // Added phone number
-  const resumeUrl = "/placeholder-resume.pdf"; 
+  const resumeUrl = "/placeholder-resume.pdf";
 
   const initials = name.split(' ').map(n => n[0]).join('').toUpperCase(); // Calculate initials here
 
@@ -41,7 +41,7 @@ export default async function HomePage() {
   };
 
   let professionalBio: string | null = null;
-  const fallbackBio = "Experienced Data Analyst passionate about uncovering insights from data. Proficient in a variety of data analysis tools and programming languages. Currently seeking new opportunities to leverage data for impactful decision-making.";
+  const fallbackBio = "Joel Luhembwe Watshala is a skilled data analyst with a Bachelor's Degree in Computer Science from Cavendish University Zambia. His expertise encompasses data manipulation and visualization using tools such as Excel, SQL, Power BI, Tableau, and Python. Joel's background provides a strong foundation for leveraging data to support strategic decision-making, complemented by storytelling and strong communication skills.";
 
   try {
     const bioOutput = await generateProfessionalBio(bioInput);
@@ -82,7 +82,7 @@ export default async function HomePage() {
       name: "Sales Dashboard Pro",
       description: "Created an interactive sales dashboard with Power BI, providing real-time insights for decision-makers.",
       imageUrl: "https://placehold.co/600x400.png",
-      projectUrl: "https://github.com/Joelluhembwe/Sales-Dashboard-Pro", 
+      projectUrl: "https://github.com/Joelluhembwe/Sales-Dashboard-Pro",
       technologies: ["Power BI", "DAX", "Data Modeling"],
       imageHint: "dashboard interface"
     },
@@ -113,29 +113,29 @@ export default async function HomePage() {
   ];
 
   const certifications: Certificate[] = [
-    { 
-      name: "Work Smart with Excel", 
-      issuer: "Microsoft", 
-      imageUrl: "https://placehold.co/400x300.png", 
-      imageHint: "excel certificate" 
+    {
+      name: "Work Smart with Excel",
+      issuer: "Microsoft",
+      imageUrl: "https://placehold.co/400x300.png",
+      imageHint: "excel certificate"
     },
-    { 
-      name: "100 Days of Coding: The Complete Python Pro Bootcamp", 
-      issuer: "Udemy", 
-      imageUrl: "https://placehold.co/400x300.png", 
-      imageHint: "python certificate" 
+    {
+      name: "100 Days of Coding: The Complete Python Pro Bootcamp",
+      issuer: "Udemy",
+      imageUrl: "https://placehold.co/400x300.png",
+      imageHint: "python certificate"
     },
-    { 
-      name: "The Complete SQL Bootcamp: Go from Zero to Hero", 
-      issuer: "Udemy", 
-      imageUrl: "https://placehold.co/400x300.png", 
-      imageHint: "sql certificate" 
+    {
+      name: "The Complete SQL Bootcamp: Go from Zero to Hero",
+      issuer: "Udemy",
+      imageUrl: "https://placehold.co/400x300.png",
+      imageHint: "sql certificate"
     },
-    { 
-      name: "Complete Data Analyst Bootcamp: From Basics To Advanced", 
-      issuer: "Udemy", 
-      imageUrl: "https://placehold.co/400x300.png", 
-      imageHint: "data analyst certificate" 
+    {
+      name: "Complete Data Analyst Bootcamp: From Basics To Advanced",
+      issuer: "Udemy",
+      imageUrl: "https://placehold.co/400x300.png",
+      imageHint: "data analyst certificate"
     }
   ];
 
@@ -176,11 +176,11 @@ export default async function HomePage() {
         <Separator className="my-8 md:my-12" />
         <CertificationsSection certificates={certifications} />
         <Separator className="my-8 md:my-12" />
-        <ResumeSection resumeUrl={resumeUrl} /> 
+        <ResumeSection resumeUrl={resumeUrl} />
         <Separator className="my-8 md:my-12" />
-        <SocialLinks 
-          githubUrl={githubLink} 
-          linkedinUrl={linkedinLink} 
+        <SocialLinks
+          githubUrl={githubLink}
+          linkedinUrl={linkedinLink}
           xUrl={xLink}
           email={email}
           phoneNumber={phoneNumber}
