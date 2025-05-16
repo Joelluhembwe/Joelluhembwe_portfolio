@@ -99,6 +99,12 @@ export default async function HomePage() {
       issuer: "Udemy",
       imageUrl: "https://placehold.co/400x300.png",
       imageHint: "data analyst certificate"
+    },
+    {
+      name: "Supply Chain Logistics",
+      issuer: "Rutgers the State University of New Jersey / Coursera",
+      imageUrl: "https://placehold.co/400x300.png", // Replace with your actual image path e.g., /certs/supply-chain-logistics-rutgers.png
+      imageHint: "logistics certificate"
     }
   ];
 
