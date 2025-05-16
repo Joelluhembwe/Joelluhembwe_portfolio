@@ -26,10 +26,10 @@ export default async function HomePage() {
   // The final path for the image file must be: your-project-folder/public/profile.jpg
   const avatarUrl = "/profile.jpg";
   const email = "joelluhembwe16@gmail.com";
-  const phoneNumber = "+260975202152"; // Added phone number
+  const phoneNumber = "+260975202152";
   const resumeUrl = "/placeholder-resume.pdf";
 
-  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase(); // Calculate initials here
+  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
 
   const bioInput: GenerateProfessionalBioInput = {
     name,
