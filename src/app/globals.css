@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 130 25% 96%; /* Light Mint Green */
+    --background: 130 40% 90%; /* More noticeable Light Mint Green */
     --foreground: 210 29% 24%; /* Dark Blue - maintaining contrast */
 
     --card: 0 0% 100%; /* White - contrasts well with light green */
@@ -16,10 +16,10 @@
     --primary: 210 29% 24%; /* Dark Blue #2c3e50 */
     --primary-foreground: 0 0% 98%; /* Almost White for text on primary */
 
-    --secondary: 130 20% 92%; /* Slightly darker light green for secondary component backgrounds */
+    --secondary: 130 35% 85%; /* Slightly darker light green for secondary component backgrounds */
     --secondary-foreground: 210 29% 24%; /* Dark Blue for text on secondary */
 
-    --muted: 130 20% 85%; /* Muted green */
+    --muted: 130 30% 80%; /* Muted green */
     --muted-foreground: 210 29% 45%; /* Muted dark blue */
 
     --accent: 205 69% 60%; /* Teal #3498db - should still work as accent */
@@ -28,8 +28,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 130 20% 88%; /* Border color based on new light green scheme */
-    --input: 130 20% 88%;   /* Input background based on new light green scheme */
+    --border: 130 35% 82%; /* Border color based on new light green scheme */
+    --input: 130 35% 82%;   /* Input background based on new light green scheme */
     --ring: 205 69% 60%;   /* Teal for focus rings */
     
     --chart-1: 12 76% 61%;
@@ -51,22 +51,22 @@
   }
 
   .dark {
-    --background: 130 18% 12%; /* Dark Desaturated Green */
-    --foreground: 130 15% 94%; /* Very Light Green/Almost White for contrast */
+    --background: 130 25% 15%; /* Richer Dark Desaturated Green */
+    --foreground: 130 20% 92%; /* Lighter Green/Almost White for contrast */
 
-    --card: 130 18% 16%; /* Slightly lighter dark green for cards */
-    --card-foreground: 130 15% 94%; 
+    --card: 130 25% 18%; /* Slightly lighter dark green for cards */
+    --card-foreground: 130 20% 92%; 
 
-    --popover: 130 18% 16%;
-    --popover-foreground: 130 15% 94%;
+    --popover: 130 25% 18%;
+    --popover-foreground: 130 20% 92%;
 
     --primary: 205 69% 60%; 
     --primary-foreground: 210 29% 10%; 
 
-    --secondary: 130 18% 22%; 
-    --secondary-foreground: 130 15% 94%; 
+    --secondary: 130 20% 20%; 
+    --secondary-foreground: 130 20% 92%; 
 
-    --muted: 130 18% 27%;
+    --muted: 130 20% 25%;
     --muted-foreground: 130 15% 70%;
 
     --accent: 205 69% 70%; 
@@ -75,8 +75,8 @@
     --destructive: 0 72.2% 50.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 130 18% 32%;
-    --input: 130 18% 32%;
+    --border: 130 20% 30%;
+    --input: 130 20% 30%;
     --ring: 205 69% 60%; 
     
     --chart-1: 220 70% 50%;
@@ -86,13 +86,13 @@
     --chart-5: 340 75% 55%;
 
     /* Sidebar specific colors for dark mode */
-    --sidebar-background: 130 18% 12%; /* Matching dark mode background */
-    --sidebar-foreground: 130 15% 94%;
+    --sidebar-background: 130 25% 15%; /* Matching dark mode background */
+    --sidebar-foreground: 130 20% 92%;
     --sidebar-primary: 205 69% 60%;
     --sidebar-primary-foreground: 210 29% 10%;
-    --sidebar-accent: 130 18% 18%;
-    --sidebar-accent-foreground: 130 15% 94%;
-    --sidebar-border: 130 18% 27%;
+    --sidebar-accent: 130 25% 20%;
+    --sidebar-accent-foreground: 130 20% 92%;
+    --sidebar-border: 130 20% 28%;
     --sidebar-ring: 205 69% 60%;
   }
 }
