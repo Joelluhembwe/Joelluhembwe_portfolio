@@ -25,7 +25,8 @@ export default async function HomePage() {
   // in the 'public' folder at the root of your project.
   // The final path for the image file must be: your-project-folder/public/profile.jpg
   const avatarUrl = "/profile.jpg"; 
-  const email = "joelluhembwe16@gmail.com"; // Updated email address
+  const email = "joelluhembwe16@gmail.com";
+  const phoneNumber = "+260975202152"; // Added phone number
   const resumeUrl = "/placeholder-resume.pdf"; 
 
   const initials = name.split(' ').map(n => n[0]).join('').toUpperCase(); // Calculate initials here
@@ -177,7 +178,13 @@ export default async function HomePage() {
         <Separator className="my-8 md:my-12" />
         <ResumeSection resumeUrl={resumeUrl} /> 
         <Separator className="my-8 md:my-12" />
-        <SocialLinks githubUrl={githubLink} linkedinUrl={linkedinLink} xUrl={xLink} />
+        <SocialLinks 
+          githubUrl={githubLink} 
+          linkedinUrl={linkedinLink} 
+          xUrl={xLink}
+          email={email}
+          phoneNumber={phoneNumber}
+        />
         <Separator className="my-8 md:my-12" />
         <ContactMe email={email} />
       </main>
