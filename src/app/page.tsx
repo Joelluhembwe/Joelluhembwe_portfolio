@@ -16,7 +16,7 @@ export default async function HomePage() {
   const title = "Data Analyst";
   const degree = "Bachelor's Degree";
   const field = "Computer Science";
-  const university = "Cavendish University Zambia"; // Added university
+  const university = "Cavendish University Zambia";
   const skills = ["Excel", "SQL", "Power BI", "Tableau", "Python"];
   const githubLink = "https://github.com/Joelluhembwe";
   const linkedinLink = "https://linkedin.com/in/joel-luhembwe"; 
@@ -30,7 +30,7 @@ export default async function HomePage() {
 
   const bioInput: GenerateProfessionalBioInput = {
     name,
-    degree: `${degree} in ${field}`,
+    degree: `${degree} in ${field} at ${university}`, // Added university to bio input for richer context
     skills,
     githubLink,
     linkedinLink,
@@ -38,12 +38,33 @@ export default async function HomePage() {
   };
 
   let professionalBio: string | null = null;
+  const fallbackBio = "Experienced Data Analyst passionate about uncovering insights from data. Proficient in a variety of data analysis tools and programming languages. Currently seeking new opportunities to leverage data for impactful decision-making.";
+
   try {
     const bioOutput = await generateProfessionalBio(bioInput);
-    professionalBio = bioOutput.bio;
-  } catch (error) {
-    console.error("Failed to generate professional bio:", error);
-    professionalBio = "Experienced Data Analyst passionate about uncovering insights from data. Proficient in a variety of data analysis tools and programming languages. Currently seeking new opportunities to leverage data for impactful decision-making.";
+    if (bioOutput && typeof bioOutput.bio === 'string' && bioOutput.bio.trim() !== '') {
+      professionalBio = bioOutput.bio;
+    } else {
+      console.error("Failed to generate professional bio: AI returned invalid, empty, or missing bio field in output.", bioOutput);
+      professionalBio = fallbackBio;
+    }
+  } catch (err) {
+    console.error("Failed to generate professional bio: An exception occurred during AI generation.");
+    if (err instanceof Error) {
+        console.error("Error Name:", err.name);
+        console.error("Error Message:", err.message);
+        if (err.stack) {
+            console.error("Error Stack:", err.stack);
+        }
+    } else {
+        // Attempt to stringify if it's not a standard Error object
+        try {
+            console.error("Raw error object:", JSON.stringify(err, null, 2));
+        } catch (stringifyError) {
+            console.error("Raw error object (could not stringify):", err);
+        }
+    }
+    professionalBio = fallbackBio;
   }
 
   const projects: Project[] = [

@@ -15,7 +15,7 @@ import {z} from 'genkit';
 
 const GenerateProfessionalBioInputSchema = z.object({
   name: z.string().describe('The full name of the person.'),
-  degree: z.string().describe('The degree of the person.'),
+  degree: z.string().describe('The degree of the person, including institution if relevant.'), // Updated description
   skills: z.array(z.string()).describe('The skills of the person.'),
   githubLink: z.string().describe('The link to the person\'s GitHub profile.'),
   linkedinLink: z.string().optional().describe('The link to the person\'s LinkedIn profile.'),
@@ -45,9 +45,10 @@ const prompt = ai.definePrompt({
   prompt: `You are an expert in writing professional biographies.
 
   Given the following information, write a concise and engaging professional bio for the person.
+  The bio should be approximately 2-4 sentences long.
 
   Name: {{{name}}}
-  Degree: {{{degree}}}
+  Degree and University: {{{degree}}}
   Skills: {{#each skills}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
   GitHub: {{{githubLink}}}
   {{#if linkedinLink}}LinkedIn: {{{linkedinLink}}}{{/if}}
@@ -63,6 +64,10 @@ const generateProfessionalBioFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    return output!;
+    if (!output || typeof output.bio !== 'string' || output.bio.trim() === '') {
+        console.error('Professional bio generation failed or returned invalid output from AI model:', output);
+        throw new Error('Failed to generate a valid professional bio from the AI model.');
+    }
+    return output;
   }
 );
