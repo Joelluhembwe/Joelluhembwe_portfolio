@@ -1,5 +1,4 @@
 
-import { generateProfessionalBio, type GenerateProfessionalBioInput } from '@/ai/flows/generate-professional-bio';
 import AboutMe from '@/components/landing/about-me';
 import SkillsShowcase from '@/components/landing/skills-showcase';
 import EducationHighlight from '@/components/landing/education-highlight';
@@ -9,7 +8,7 @@ import ContactMe from '@/components/landing/contact-me';
 import ResumeSection from '@/components/landing/resume-section';
 import CertificationsSection, { type Certificate } from '@/components/landing/certifications-section';
 import { Separator } from '@/components/ui/separator';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'; // Added Avatar imports
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default async function HomePage() {
   const name = "Joel Luhembwe Watshala";
@@ -31,43 +30,7 @@ export default async function HomePage() {
 
   const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
 
-  const bioInput: GenerateProfessionalBioInput = {
-    name,
-    degree: `${degree} in ${field} at ${university}`,
-    skills,
-    githubLink,
-    linkedinLink,
-    xLink,
-  };
-
-  let professionalBio: string | null = null;
-  const fallbackBio = "Joel Luhembwe Watshala is a skilled data analyst with a Bachelor's Degree in Computer Science from Cavendish University Zambia. His expertise encompasses data manipulation and visualization using tools such as Excel, SQL, Power BI, Tableau, and Python. Joel's background provides a strong foundation for leveraging data to support strategic decision-making, complemented by storytelling and strong communication skills.";
-
-  try {
-    const bioOutput = await generateProfessionalBio(bioInput);
-    if (bioOutput && typeof bioOutput.bio === 'string' && bioOutput.bio.trim() !== '') {
-      professionalBio = bioOutput.bio;
-    } else {
-      console.error("Failed to generate professional bio: AI returned invalid, empty, or missing bio field in output.", bioOutput);
-      professionalBio = fallbackBio;
-    }
-  } catch (err) {
-    console.error("Failed to generate professional bio: An exception occurred during AI generation.");
-    if (err instanceof Error) {
-        console.error("Error Name:", err.name);
-        console.error("Error Message:", err.message);
-        if (err.stack) {
-            console.error("Error Stack:", err.stack);
-        }
-    } else {
-        try {
-            console.error("Raw error object:", JSON.stringify(err, null, 2));
-        } catch (stringifyError) {
-            console.error("Raw error object (could not stringify):", err);
-        }
-    }
-    professionalBio = fallbackBio;
-  }
+  const professionalBio = "Joel Luhembwe Watshala is a skilled data analyst with a Bachelor's Degree in Computer Science from Cavendish University Zambia. His expertise encompasses data manipulation and visualization using tools such as Excel, SQL, Power BI, Tableau, and Python. Joel's background provides a strong foundation for leveraging data to support strategic decision-making, complemented by storytelling and strong communication skills.";
 
   const projects: Project[] = [
     {
