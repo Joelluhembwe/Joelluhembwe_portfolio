@@ -25,7 +25,7 @@ export default async function HomePage() {
   // in the 'public' folder at the root of your project.
   // The final path for the image file must be: your-project-folder/public/profile.jpg
   const avatarUrl = "/profile.jpg"; 
-  const email = "joel.watshala@example.com";
+  const email = "joelluhembwe16@gmail.com"; // Updated email address
   const resumeUrl = "/placeholder-resume.pdf"; 
 
   const initials = name.split(' ').map(n => n[0]).join('').toUpperCase(); // Calculate initials here
