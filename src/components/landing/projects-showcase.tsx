@@ -22,7 +22,7 @@ interface ProjectsShowcaseProps {
 
 const ProjectsShowcase: FC<ProjectsShowcaseProps> = ({ projects }) => {
   return (
-    <section id="projects" className="py-12 md:py-16 bg-secondary/30">
+    <section id="projects" className="pt-6 md:pt-8 pb-12 md:pb-16 bg-secondary/30"> {/* Reduced top padding */}
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
           <Briefcase className="inline-block w-10 h-10 mr-3 text-accent" />

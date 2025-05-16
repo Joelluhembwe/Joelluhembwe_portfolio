@@ -106,7 +106,7 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* New Hero Section with Profile on Left, About Me on Right */}
-      <section className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+      <section className="container mx-auto px-4 pt-12 md:pt-16 lg:pt-20 pb-6 md:pb-8"> {/* Reduced bottom padding */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-start">
           {/* Left Side: Profile Info */}
           <div className="w-full md:w-1/3 lg:w-1/4 flex flex-col items-center md:items-start text-center md:text-left">
@@ -130,7 +130,7 @@ export default async function HomePage() {
       </section>
 
       <main className="flex-grow container mx-auto px-4"> {/* Ensure main content is also containerized */}
-        <Separator className="my-8 md:my-12" />
+        <Separator className="my-6 md:my-8" /> {/* Reduced vertical margin */}
         <ProjectsShowcase projects={projects} />
         <Separator className="my-8 md:my-12" />
         <SkillsShowcase />
