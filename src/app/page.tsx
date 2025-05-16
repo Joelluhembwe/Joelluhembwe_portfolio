@@ -1,6 +1,5 @@
 
 import { generateProfessionalBio, type GenerateProfessionalBioInput } from '@/ai/flows/generate-professional-bio';
-import Introduction from '@/components/landing/introduction';
 import AboutMe from '@/components/landing/about-me';
 import SkillsShowcase from '@/components/landing/skills-showcase';
 import EducationHighlight from '@/components/landing/education-highlight';
@@ -10,6 +9,7 @@ import ContactMe from '@/components/landing/contact-me';
 import ResumeSection from '@/components/landing/resume-section'; 
 import CertificationsSection, { type Certificate } from '@/components/landing/certifications-section';
 import { Separator } from '@/components/ui/separator';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'; // Added Avatar imports
 
 export default async function HomePage() {
   const name = "Joel Luhembwe Watshala";
@@ -28,9 +28,11 @@ export default async function HomePage() {
   const email = "joel.watshala@example.com";
   const resumeUrl = "/placeholder-resume.pdf"; 
 
+  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase(); // Calculate initials here
+
   const bioInput: GenerateProfessionalBioInput = {
     name,
-    degree: `${degree} in ${field} at ${university}`, // Added university to bio input for richer context
+    degree: `${degree} in ${field} at ${university}`,
     skills,
     githubLink,
     linkedinLink,
@@ -57,7 +59,6 @@ export default async function HomePage() {
             console.error("Error Stack:", err.stack);
         }
     } else {
-        // Attempt to stringify if it's not a standard Error object
         try {
             console.error("Raw error object:", JSON.stringify(err, null, 2));
         } catch (stringifyError) {
@@ -123,11 +124,32 @@ export default async function HomePage() {
 
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Introduction name={name} title={title} avatarUrl={avatarUrl} />
+    <div className="min-h-screen flex flex-col bg-background">
+      {/* New Hero Section with Profile on Left, About Me on Right */}
+      <section className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-start">
+          {/* Left Side: Profile Info */}
+          <div className="w-full md:w-1/3 lg:w-1/4 flex flex-col items-center md:items-start text-center md:text-left">
+            <Avatar className="w-56 h-56 md:w-72 md:h-72 mb-6 shadow-lg border-4 border-accent transition-all duration-300 ease-in-out hover:scale-105">
+              <AvatarImage src={avatarUrl} alt={name} data-ai-hint="profile portrait" />
+              <AvatarFallback className="text-7xl md:text-8xl bg-primary text-primary-foreground">{initials}</AvatarFallback>
+            </Avatar>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1">
+              {name}
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-accent font-semibold mb-6 md:mb-0">
+              {title}
+            </p>
+          </div>
 
-      <main className="flex-grow">
-        <AboutMe bio={professionalBio} />
+          {/* Right Side: About Me Card */}
+          <div id="about-me" className="w-full md:w-2/3 lg:w-3/4 pt-0 md:pt-4"> {/* id for navigation, added padding top for md screens */}
+            <AboutMe bio={professionalBio} />
+          </div>
+        </div>
+      </section>
+
+      <main className="flex-grow container mx-auto px-4"> {/* Ensure main content is also containerized */}
         <Separator className="my-8 md:my-12" />
         <ProjectsShowcase projects={projects} />
         <Separator className="my-8 md:my-12" />
