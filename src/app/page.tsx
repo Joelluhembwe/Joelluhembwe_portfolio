@@ -30,7 +30,7 @@ export default async function HomePage() {
 
   const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
 
-  const professionalBio = "Joel Luhembwe Watshala is a skilled data analyst with a Bachelor's Degree in Computer Science from Cavendish University Zambia. His expertise encompasses data manipulation and visualization using tools such as Excel, SQL, Power BI, Tableau, and Python. Joel's background provides a strong foundation for leveraging data to support strategic decision-making, complemented by storytelling and strong communication skills.";
+  const professionalBio = "Joel Luhembwe Watshala is a data analyst with a Bachelor's degree in Computer Science from Cavendish University Zambia. He has hands-on experience working with data using tools like Excel, SQL, Power BI, Tableau, and Python. Joel is skilled at turning raw data into clear insights that help guide decision-making. His ability to communicate complex ideas through data storytelling makes him a valuable asset in any data-driven environment.";
 
   const projects: Project[] = [
     {
