@@ -15,9 +15,9 @@ const Introduction: FC<IntroductionProps> = ({ name, title, avatarUrl }) => {
   return (
     <section id="introduction" className="py-16 md:py-24 text-center bg-background">
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <Avatar className="w-40 h-40 md:w-56 md:h-56 mb-6 shadow-lg border-4 border-accent transition-all duration-300 ease-in-out hover:scale-105">
+        <Avatar className="w-48 h-48 md:w-64 md:h-64 mb-6 shadow-lg border-4 border-accent transition-all duration-300 ease-in-out hover:scale-105">
           <AvatarImage src={avatarUrl} alt={name} data-ai-hint="profile portrait" />
-          <AvatarFallback className="text-5xl md:text-6xl bg-primary text-primary-foreground">{initials}</AvatarFallback>
+          <AvatarFallback className="text-6xl md:text-7xl bg-primary text-primary-foreground">{initials}</AvatarFallback>
         </Avatar>
         <h1 className="text-4xl md:text-6xl font-bold text-primary mb-2">
           {name}
